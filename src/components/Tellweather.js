@@ -5,9 +5,10 @@ import "./css/style.css";
 const Tellweather = () => {
     const [city, setCity] = useState("Mumbai");
     const [search, setSearch] = useState("Mumbai")
+    const apikey = ""  //Enter your API key from open weather here
     useEffect( () => {
         const fetchApi = async () => {
-            const url = `http://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=dc0f8ee38c78949f598cecfb3c8a84fa`;
+            const url = `http://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=${apikey}`;
             const response = await fetch(url);
             // console.log(response);
             const resJson = await response.json();
@@ -51,6 +52,7 @@ const Tellweather = () => {
             </>
           )}
         </div>
+        <div className="end">Made with ❤️ by Himanshu Rawat</div>
       </>
     );
 }
